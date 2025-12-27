@@ -53,8 +53,15 @@ def send_telegram_alert(message):
 
 def call_api_and_compare():
     # Call the external API
-    response = requests.post(API_URL, verify=False)
-    print(response)
+    headers = {
+        "User-Agent": "api-monitor/1.0",
+        "Accept": "application/json"
+    }
+
+    response = requests.post(API_URL,headers=headers, verify=False)
+    if response.status_code == 405:
+        print("⚠️ 405 received. Likely temporary. Will retry next run.")
+        return
     response.raise_for_status()
     data = response.json()
 
