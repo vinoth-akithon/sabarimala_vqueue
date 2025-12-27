@@ -64,6 +64,7 @@ def call_api_and_compare():
     "sec-fetch-dest": "empty",
     "sec-fetch-mode": "cors",
     "sec-fetch-site": "same-origin",
+    "User-Agent": "PostmanRuntime/7.39.1"
   }
 
     response = requests.post(API_URL,headers=headers, verify=False)
