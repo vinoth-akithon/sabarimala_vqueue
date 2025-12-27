@@ -53,6 +53,7 @@ def send_telegram_alert(message):
 
 def call_api_and_compare():
     # Call the external API
+    print(API_URL)
     response = requests.post(API_URL, verify=False)
     response.raise_for_status()
     data = response.json()
