@@ -60,6 +60,7 @@ def call_api_and_compare():
 
     response = requests.post(API_URL,json=payload,headers=headers, verify=False)
     if response.status_code == 405:
+        print(response.text)
         print("⚠️ 405 received. Likely temporary. Will retry next run.")
         return
     response.raise_for_status()
