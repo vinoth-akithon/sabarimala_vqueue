@@ -54,20 +54,11 @@ def send_telegram_alert(message):
 def call_api_and_compare():
     # Call the external API
     headers = {
-    "accept": "application/json, text/plain, */*",
-    "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
-    "content-type": "application/json",
-    "priority": "u=1, i",
-    "sec-ch-ua": "\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
-    "sec-ch-ua-mobile": "?0",
-    "sec-ch-ua-platform": "\"Windows\"",
-    "sec-fetch-dest": "empty",
-    "sec-fetch-mode": "cors",
-    "sec-fetch-site": "same-origin",
-    "User-Agent": "PostmanRuntime/7.39.1"
-  }
+        "content-type": "application/json",
+    }
+    payload = {}
 
-    response = requests.post(API_URL,headers=headers, verify=False)
+    response = requests.post(API_URL,json=payload,headers=headers, verify=False)
     if response.status_code == 405:
         print("⚠️ 405 received. Likely temporary. Will retry next run.")
         return
