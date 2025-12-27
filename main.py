@@ -11,7 +11,7 @@ warnings.filterwarnings("ignore")
 dotenv.load_dotenv()
 
 # Configuration
-API_URL = os.environ["API_URL"]
+API_URL = "https://sabarimalaonline.org/api/eDarshan/darshansummary/100001"
 BOT_TOKEN = os.environ["BOT_TOKEN"]
 CHAT_ID = os.environ["CHAT_ID"]
 
@@ -53,8 +53,8 @@ def send_telegram_alert(message):
 
 def call_api_and_compare():
     # Call the external API
-    print(API_URL)
     response = requests.post(API_URL, verify=False)
+    print(response)
     response.raise_for_status()
     data = response.json()
 
