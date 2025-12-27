@@ -54,9 +54,17 @@ def send_telegram_alert(message):
 def call_api_and_compare():
     # Call the external API
     headers = {
-        "User-Agent": "api-monitor/1.0",
-        "Accept": "application/json"
-    }
+    "accept": "application/json, text/plain, */*",
+    "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+    "content-type": "application/json",
+    "priority": "u=1, i",
+    "sec-ch-ua": "\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+  }
 
     response = requests.post(API_URL,headers=headers, verify=False)
     if response.status_code == 405:
