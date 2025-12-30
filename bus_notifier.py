@@ -2,10 +2,10 @@ import requests
 from bs4 import BeautifulSoup
 import re
 from datetime import datetime
-from dotenv import loadenv
+from dotenv import load_dotenv
 import os
 
-loadenv()
+load_dotenv()
 
 BOT_TOKEN = os.environ["BOT_TOKEN"]
 CHAT_ID = os.environ["CHAT_ID"]
