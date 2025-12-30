@@ -127,7 +127,7 @@ def get_list_of_buses():
 from datetime import datetime
 
 def get_message(list_of_buses: list[dict]) -> str:
-    if len(list_of_buses) > 0:
+    if len(list_of_buses) > 1:
         # Group buses by time and format the message
         buses_by_time = {}
         for bus in list_of_buses:
