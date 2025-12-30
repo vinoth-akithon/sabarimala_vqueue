@@ -25,4 +25,4 @@ jobs:
           API_URL: ${{ secrets.API_URL }}
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
-        run: python main.py
+        run: python bus_notifier.py
